@@ -2,8 +2,8 @@
 Program name: index.html
 Author: Nathan Galdamez Gomez
 Date created: 09/24/2026
-Date last edited: 09/28/2026
-Version: 1.6
+Date last edited: 09/29/2026
+Version: 1.7
 Description: This document is the medical form for Assignment 1.
 -->
 
@@ -165,12 +165,28 @@ Description: This document is the medical form for Assignment 1.
 	  <label id="agerange"> Age Range: </label>
       <input type="radio" name="kid" value="Kid" /><span> Under 18 </span>
       <input type="radio" name="adult" value="Adult" /><span> 18 to 64 </span>
-      <input type="radio" name="senior" value="Senior" /><span> 65 or Older </span> <br><br>
+      <input type="radio" name="senior" value="Senior" /><span> 65 or Older </span> <br>
 
 	  <label id="insured"> Are you insured? </label>
 	  <input type="radio" name="yes" value="Yes" /><span> Y </span>
       <input type="radio" name="yes" value="No" /><span> N </span>
-		
+
+	  <!-- Password input type fields below for entry and re-entry of a created password below in a table -->
+	  <table>
+		  <tr>
+			  <td>
+				  <label for="pwd"> Password: </label>
+                  <input type="password" id="pword" name="pword" minlength="8">
+			  </td>
+
+		      <td>
+				  <label for="pwd">Re-Type Password:</label>
+                  <input type="password" id="passw" name="passw" minlength="8">
+			  </td>
+		  </tr>
+	  </table>
+
+	 
     </form>
   </div>
 
