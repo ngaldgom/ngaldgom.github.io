@@ -16,6 +16,8 @@ Description: This document is the medical form for Assignment 1.
   
   <div>
     <form>
+
+      <!-- Below is table for the user's whole name -->
       <table>
         <tr>
           <td>
@@ -31,6 +33,21 @@ Description: This document is the medical form for Assignment 1.
             <input type="text" id="lname" name="lname"></td>
          </tr>
       </table> <br>
+
+      <!-- Personal information such as birthday, SSN, and addresses -->
+      <label for="dob"> Date of Birth: </label>
+      <input type="date" id="dob" name="dob"> <br><br>
+
+      <label for="ssn"> Social Security: </label>
+      <input type="text" inputmode="numeric" pattern="[0-9]*"> <br><br>
+
+      <label for="address1"> Address Line 1: </label>
+      <input type="text" id="address1" name="address1"> <br><br>
+
+      <label for="address2"> Address Line 2: </label>
+      <input type="text" id="address2" name="address2"> <br><br>
+
+      
     </form>
   </div>
 
