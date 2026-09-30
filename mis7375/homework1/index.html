@@ -1,9 +1,9 @@
 <!--
-Program name: patient-form.html
+Program name: index.html
 Author: Nathan Galdamez Gomez
 Date created: 09/24/2026
-Date last edited: 09/26/2026
-Version: 1.5
+Date last edited: 09/28/2026
+Version: 1.6
 Description: This document is the medical form for Assignment 1.
 -->
 
@@ -156,6 +156,21 @@ Description: This document is the medical form for Assignment 1.
 	  <input type="checkbox" id="sickness5" name="sickness5" value="Influenza">
       <label for="sickness5"> Influenza </label> <br><br>
 
+	  <!-- 3 sets of radio buttons indicating age, gender, and insurance status are below -->
+	  <label id="gender"> Gender: </label>
+	  <input type="radio" name="fgen" value="Female" /><span> Female/F </span>
+      <input type="radio" name="mgen" value="Male" /><span> Male/M </span>
+      <input type="radio" name="ogen" value="Other" /><span> Other/O </span><br>
+
+	  <label id="agerange"> Age Range: </label>
+      <input type="radio" name="kid" value="Kid" /><span> Under 18 </span>
+      <input type="radio" name="adult" value="Adult" /><span> 18 to 64 </span>
+      <input type="radio" name="senior" value="Senior" /><span> 65 or Older </span> <br><br>
+
+	  <label id="insured"> Are you insured? </label>
+	  <input type="radio" name="yes" value="Yes" /><span> Y </span>
+      <input type="radio" name="yes" value="No" /><span> N </span>
+		
     </form>
   </div>
 
