@@ -2,8 +2,8 @@
 Program name: index.html
 Author: Nathan Galdamez Gomez
 Date created: 09/24/2026
-Date last edited: 09/29/2026
-Version: 2.0
+Date last edited: 09/30/2026
+Version: 2.2
 Description: This document is the medical form for Assignment 1.
 -->
 
@@ -219,7 +219,13 @@ Description: This document is the medical form for Assignment 1.
 		  </center>
 	  </footer>
   </div>
-  
+
+  <!-- Some JavaScript to display the date in the header is below -->
+  <script>
+	  var dt = new Date().toDateString();
+	  var sentence = "Today is: " + dt;
+	  document.getElementById("date-display").textContent = sentence;
+  </script>
 </body>
 
 </html>
