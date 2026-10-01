@@ -204,7 +204,16 @@ Description: This document is the medical form for Assignment 1.
 
 	  <!-- Clear and submit buttons will be below (CLEAR AND START OVER BUTTON has been made first) -->
 	  <button type="reset"> CLEAR AND START OVER </button>
-	  
+	  <!-- preventDefault() does not allow for actual submission of form
+		It just redirects to thankyou.html for Assignment 1
+		(might change in the future) 
+		-->
+      <button type="submit" 
+		  onclick="event.preventDefault(); 
+		  window.location.href='thankyou.html';">
+		  SUBMIT
+	  </button>
+		
     </form>
   </div>
 
