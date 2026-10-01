@@ -1,0 +1,52 @@
+<!--
+This is the Thank you page
+Once the SUBMIT button is clicked, it will redirect to this page
+Will have the same layout as index.html, but with only text in the div tag with the "form" section
+-->
+
+<!DOCTYPE html>
+
+<head>
+  <title> Nathan Assignment 1 Thank You Page </title>
+  <link rel="stylesheet" href="stylize.css">
+</head>
+
+<body>
+
+  <!-- The same div tag containing the header of the webpage -->
+  <div>
+    <header>
+      <div class="head-materials">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj_pF8cUdCdh_s84PXIpQsbtCq7FePXvnrSwSfal-MUA&s=10"
+          alt="Banner Image for Assignment 1"
+          width="200"
+          height="200">
+        <h1 class="banner"> FunnyBones Medical </h1>
+        <p id="date-display"> </p>
+      </div>
+    </header>
+  </div>
+
+
+
+
+
+  <!-- The same footer from the index.html webpage -->
+  <div>
+    <footer class="footer-appearance">
+      <center> <h2> Contact Us </h2>
+      <p> <a href="mailto:ngaldame@cougarnet.uh.edu"> FunnyBones Medical E-mail </a> </p> </center>
+    </footer>
+  </div>
+
+  <!-- JavaScript for the text and date to appear in the header -->
+  <script>
+    var dt = new Date().toDateString();
+    var sentence = "Today is: " + dt;
+    document.getElementById("date-display").textContent = sentence;
+  </script>
+
+  
+</body>
+
+</html>
