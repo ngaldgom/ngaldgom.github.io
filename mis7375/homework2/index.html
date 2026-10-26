@@ -2,8 +2,8 @@
 Program name: index.html
 Author: Nathan Galdamez Gomez
 Date created: 10/13/2026
-Date last edited: 10/16/2026 (on my local machine)
-Version: 1.1
+Date last edited: 10/19/2026 (on my local machine)
+Version: 1.2
 Description: This document is the medical form WITH a review button for validated data for Assignment 2.
 -->
 
@@ -73,7 +73,31 @@ Description: This document is the medical form WITH a review button for validate
 		  max="2026-10-23" 
 		  required> <br><br>
 
-	  
+	  <!-- Area 2 containing the email and phone number for Assignment 2 is below -->
+	  <table>
+        <tr>
+          <td>
+
+			<!-- Format email as something like name@domain.tld -->
+            <label for="email">Email:</label>
+            <input type="email" 
+				id="email" 
+				name="email" 
+				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+				required>
+          </td>
+          <td>
+
+			<!-- Format phone number as something like 000-000-0000 for validation -->
+            <label for="phonenum">Phone Number:</label>
+            <input type="text" 
+				id="phonenum" 
+				name="phonenum" 
+				pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+				required>
+		  </td>
+         </tr>
+      </table> <br>
 		
     </form>
   </div>
