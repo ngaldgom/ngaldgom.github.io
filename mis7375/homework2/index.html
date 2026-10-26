@@ -2,8 +2,8 @@
 Program name: index.html
 Author: Nathan Galdamez Gomez
 Date created: 10/13/2026
-Date last edited: 10/13/2026
-Version: 1.0
+Date last edited: 10/16/2026 (on my local machine)
+Version: 1.1
 Description: This document is the medical form WITH a review button for validated data for Assignment 2.
 -->
 
@@ -33,193 +33,47 @@ Description: This document is the medical form WITH a review button for validate
 
   <!-- Below is the div element with the form with external CSS elements -->
   <div>
-    <form class="medical-form">
+    <form name="makeaccount" id="makeaccount" action="thankyou.html" class="medical-form" method="get">
 
+	  <!-- Area 1 for the Assignment 2 form is below -->
       <!-- Below is table for the user's whole name -->
       <table>
         <tr>
           <td>
             <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname">
+            <input type="text" 
+				id="fname" 
+				name="fname" 
+				pattern="[A-Za-z\s'-]{1,30}" 
+				required>
           </td>
           <td>
             <label for="mname">Middle Initial:</label>
-            <input type="text" id="mname" name="mname">
+            <input type="text" 
+				id="mname" 
+				name="mname" 
+				pattern="[A-Z]{1}">
           </td>
           <td>
             <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname"></td>
+            <input type="text" 
+				id="lname" 
+				name="lname" 
+				pattern="[a-zA-Z2-5'-]+" 
+				required>
+		  </td>
          </tr>
       </table> <br>
 
-      <!-- Personal information such as birthday, SSN, and addresses -->
+	  <!-- The patient's birthday has to be within last 120 years -->
       <label for="dob"> Date of Birth: </label>
-      <input type="date" id="dob" name="dob"> <br><br>
+      <input type="date"
+		  id="dob" name="dob"
+		  min="1926-01-01"
+		  max="2026-10-23" 
+		  required> <br><br>
 
-      <label for="ssn"> Social Security: </label>
-      <input type="text" inputmode="numeric" pattern="[0-9]*"> <br><br>
-
-      <label for="address1"> Address Line 1: </label>
-      <input type="text" id="address1" name="address1"> <br><br>
-
-      <label for="address2"> Address Line 2: </label>
-      <input type="text" id="address2" name="address2"> <br><br>
-
-      <!-- The City, State, and Zip Code fields are in the table below -->
-      <table>
-        <tr>
-          <td>
-            <label for="city"> City: </label>
-            <input type="text" id="city" name="city">
-          </td>
-
-          <!-- The dropdown menu for all 50 states is in the select tag 
-			Added a Select a State option
-			This for better claryifying to select instead of Alabama being selected by default
-		  -->
-          <td>
-            <label for="state"> State: </label>
-            
-            <select>
-				<option value="se">(Select a State)</option>
-              	<option value="al">Alabama</option>
-              	<option value="ak">Alaska</option>
-	            <option value="az">Arizona</option>
-	            <option value="ar">Arkansas</option>
-	            <option value="ca">California</option>
-	            <option value="co">Colorado</option>
-	            <option value="ct">Connecticut</option>
-	            <option value="de">Delaware</option>
-	            <option value="fl">Florida</option>
-	            <option value="ga">Georgia</option>
-	            <option value="hi">Hawaii</option>
-	            <option value="id">Idaho</option>
-	            <option value="il">Illinois</option>
-	            <option value="in">Indiana</option>
-	            <option value="ia">Iowa</option>
-	            <option value="ks">Kansas</option>
-	            <option value="ky">Kentucky</option>
-	            <option value="la">Louisiana</option>
-	            <option value="me">Maine</option>
-	            <option value="md">Maryland</option>
-	            <option value="ma">Massachusetts</option>
-	            <option value="mi">Michigan</option>
-	            <option value="MN">Minnesota</option>
-	            <option value="ms">Mississippi</option>
-	            <option value="mo">Missouri</option>
-	            <option value="mt">Montana</option>
-	            <option value="ne">Nebraska</option>
-	            <option value="nv">Nevada</option>
-	            <option value="nh">New Hampshire</option>
-	            <option value="nj">New Jersey</option>
-	            <option value="nm">New Mexico</option>
-	            <option value="ny">New York</option>
-	            <option value="nc">North Carolina</option>
-	            <option value="nd">North Dakota</option>
-    	        <option value="oh">Ohio</option>
-	            <option value="ok">Oklahoma</option>
-	            <option value="or">Oregon</option>
-	            <option value="pa">Pennsylvania</option>
-	            <option value="ri">Rhode Island</option>
-	            <option value="sc">South Carolina</option>
-	            <option value="sd">South Dakota</option>
-	            <option value="tn">Tennessee</option>
-	            <option value="tx">Texas</option>
-	            <option value="ut">Utah</option>
-	            <option value="vt">Vermont</option>
-	            <option value="va">Virginia</option>
-	            <option value="wa">Washington</option>
-	            <option value="wv">West Virginia</option>
-	            <option value="wi">Wisconsin</option>
-	            <option value="wy">Wyoming</option>
-            </select>
-            
-          </td>
-
-          <td>
-            <label for="zip"> Zip Code: </label>
-            <input type="text" id="zip" name="zip">
-          </td>
-          
-        </tr>
-      </table> <br>
-
-	  <!-- The user's email address will be added below -->
-	  <label for="email"> Email Address: </label>
-	  <input type="text" id="email" name="email"> <br><br>
-
-	  <!-- A table with a textarea tag for the reasoning of scheduling an appointment is below -->
-      <table>
-		  <tr>
-			  <td>
-				  <label for="describer"> Describe the reason for your appointment: </label>
-			  </td>
-
-			  <td>
-				  <textarea id="describer" name="describer" rows="5" cols="60"> </textarea>
-			  </td>
-		  </tr>
-	  </table> <br>
-
-	  <!-- Checkboxes for examples of sicknesses are below -->
-	  <label> Sickness(es) you have had recently: </label>
-      <input type="checkbox" id="sickness1" name="sickness1" value="Measles">
-	  <label for="sickness1"> Measles </label>
-
-	  <input type="checkbox" id="sickness2" name="sickness2" value="CommonCold">
-      <label for="sickness2"> Common Cold </label>
-
-	  <input type="checkbox" id="sickness3" name="sickness3" value="Coronavirus">
-      <label for="sickness3"> Coronavirus </label>
-
-	  <input type="checkbox" id="sickness4" name="sickness4" value="Pneumonia">
-      <label for="sickness4"> Pneumonia </label>
-
-	  <input type="checkbox" id="sickness5" name="sickness5" value="Influenza">
-      <label for="sickness5"> Influenza </label> <br><br>
-
-	  <!-- 3 sets of radio buttons indicating age, gender, and insurance status are below -->
-	  <label id="gender"> Gender: </label>
-	  <input type="radio" name="fgen" value="Female" /><span> Female/F </span>
-      <input type="radio" name="mgen" value="Male" /><span> Male/M </span>
-      <input type="radio" name="ogen" value="Other" /><span> Other/O </span><br>
-
-	  <label id="agerange"> Age Range: </label>
-      <input type="radio" name="kid" value="Kid" /><span> Under 18 </span>
-      <input type="radio" name="adult" value="Adult" /><span> 18 to 64 </span>
-      <input type="radio" name="senior" value="Senior" /><span> 65 or Older </span> <br>
-
-	  <label id="insured"> Are you insured? </label>
-	  <input type="radio" name="yes" value="Yes" /><span> Y </span>
-      <input type="radio" name="yes" value="No" /><span> N </span>
-
-	  <!-- Password input type fields below for entry and re-entry of a created password below in a table -->
-	  <table>
-		  <tr>
-			  <td>
-				  <label for="pwd"> Password: </label>
-                  <input type="password" id="pword" name="pword" minlength="8">
-			  </td>
-
-		      <td>
-				  <label for="pwd">Re-Type Password:</label>
-                  <input type="password" id="passw" name="passw" minlength="8">
-			  </td>
-		  </tr>
-	  </table>
-
-	  <!-- Clear and submit buttons will be below (CLEAR AND START OVER BUTTON has been made first) -->
-	  <button type="reset"> CLEAR AND START OVER </button>
-		
-	  <!-- preventDefault() does not allow for actual submission of form
-		It just redirects to thankyou.html for Assignment 1
-		(might change in the future) 
-		-->
-      <button type="submit" 
-		  onclick="event.preventDefault(); 
-		  window.location.href='thankyou.html';">
-		  SUBMIT
-	  </button>
+	  
 		
     </form>
   </div>
