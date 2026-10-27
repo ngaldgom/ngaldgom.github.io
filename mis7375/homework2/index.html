@@ -119,6 +119,106 @@ Description: This document is the medical form WITH a review button for validate
 		  name="address2" 
 		  minlength="2"
 		  maxlength="30"> <br><br>
+
+	  <!-- The City, State, and Zip Code fields are in the table below -->
+	  <table>
+        <tr>
+          <td>
+
+			<!-- Require 2 to 30 characters for the City -->
+            <label for="city"> City: </label>
+            <input type="text" 
+				id="city" 
+				name="city" 
+				minlength="2"
+				maxlength="30"
+				required>
+          </td>
+
+		  <!-- The dropdown menu for all 50 states is in the select tag 
+			Added a Select a State option
+			This for better claryifying to select instead of Alabama being selected by default
+		  -->
+          <td>
+            <label for="state"> State: </label>
+            
+            <select required>
+				
+				<!-- A NULL initial value is below so that the user MUST select a valid value for the state -->
+				<option value="" disabled selected hidden>(Select a State)</option>
+
+				<!-- All option tags with 50 US states including DC and Puerto Rico are below
+				 I changed it from the spelled out versions in my Assignment 1 submission to the 2 letter code versions
+				 That was to comply with the guidelines of Assignment 2
+				-->
+				<option value="al">AL</option>
+              	<option value="ak">AL</option>
+				<option value="az">AZ</option>
+	            <option value="ar">AR</option>
+	            <option value="ca">CA</option>
+	            <option value="co">CO</option>
+	            <option value="ct">CT</option>
+	    	    <option value="dc">DC</option>
+	            <option value="de">DE</option>
+	            <option value="fl">FL</option>
+	            <option value="ga">GA</option>
+	            <option value="hi">HI</option>
+	            <option value="id">ID</option>
+	            <option value="il">IL</option>
+	            <option value="in">IN</option>
+	            <option value="ia">IA</option>
+	            <option value="ks">KS</option>
+	            <option value="ky">KY</option>
+	            <option value="la">LA</option>
+	            <option value="me">ME</option>
+	            <option value="md">MD</option>
+	            <option value="ma">MA</option>
+	            <option value="mi">MI</option>
+	            <option value="mn">MN</option>
+	            <option value="ms">MS</option>
+	            <option value="mo">MO</option>
+	            <option value="mt">MT</option>
+	            <option value="ne">NE</option>
+	            <option value="nv">NV</option>
+	            <option value="nh">NH</option>
+	            <option value="nj">NJ</option>
+	            <option value="nm">NM</option>
+	            <option value="ny">NY</option>
+	            <option value="nc">NC</option>
+	            <option value="nd">ND</option>
+    	        <option value="oh">OH</option>
+	            <option value="ok">OK</option>
+	            <option value="or">OR</option>
+	            <option value="pa">PA</option>
+		        <option value="pr">PR</option>
+	            <option value="ri">RI</option>
+	            <option value="sc">SC</option>
+	            <option value="sd">SD</option>
+	            <option value="tn">TN</option>
+	            <option value="tx">TX</option>
+	            <option value="ut">UT</option>
+	            <option value="vt">VT</option>
+	            <option value="va">VA</option>
+	            <option value="wa">WA</option>
+	            <option value="wv">WV</option>
+	            <option value="wi">WI</option>
+	            <option value="wy">WY</option>
+			</select>
+		  </td>
+
+		  <!-- The zip code needs 5 to 10 numbers with a Regex Pattern (ex. 12345-6789 or just 12345) that will be validated -->
+		  <td>
+            <label for="zip"> Zip Code: </label>
+            <input type="text" 
+				id="zip" 
+				name="zip" 
+				minlength="5"
+				maxlength="10"
+				pattern="\d{5}(-\d{4})?" 
+				required>
+          </td>
+		</tr>
+	  </table> <br>
 		
     </form>
   </div>
