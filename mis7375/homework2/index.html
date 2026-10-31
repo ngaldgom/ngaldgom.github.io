@@ -2,8 +2,8 @@
 Program name: index.html
 Name: Nathan Galdamez Gomez
 Date created: 10/13/2026
-Date last edited: 10/22/2026 (on my local machine)/ 10/27/2026 (GitHub Pages commit)
-Version: 1.7
+Date last edited: 10/24/2026 (on my local machine)/ 10/30/2026 (GitHub Pages commit)
+Version: 1.8
 Description: This document is the medical form WITH a review button for validated data for Assignment 2.
 -->
 
@@ -324,23 +324,86 @@ Description: This document is the medical form WITH a review button for validate
 			  </td>
 		  </tr>
 		  <tr>
+			  <!-- The td tags containing the input password type now call on functions
+			  	The JavaScript functions being called from an external JavaScript file will be called
+			  	They are referenced with oninput(), onfocus(), and onblur() attributes
+			  -->
+			  
 			  <td>
-				  <label for="pwd"> Password: </label>
+				  <label for="pwd1"> Password: </label>
 				  <input type="password" 
-					  id="pword" 
-					  name="pword" 
+					  id="pwd1" 
+					  name="pwd1" 
 					  minlength="8" 
+					  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					  oninput="pwdentry()" 
+					  onfocus="pwdentry()" 
+					  onblur="pwdentry()"
 					  required>
 			  </td>
 			  <td>
-				  <label for="pwd"> Re-Type Password: </label>
+				  <label for="pwd2"> Re-Type Password: </label>
 				  <input type="password" 
-					  id="passw" 
-					  name="passw" 
-					  minlength="8" 
+					  id="pwd2" 
+					  name="pwd2" 
+					  minlength="8"
+					  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					  oninput="checkpwd2()" 
+					  onfocus="checkpwd2()" 
+					  onblur="checkpwd2()"
 					  required>
+
+				  <!-- The <span> tag will verify whether the passwords match or not -->
+				  <span id="pwd2_text">
 			  </td>
 		  </tr>
+
+		  <!-- 5 tr tags with td tags in them will display all 5 requirements for password inputs -->
+		  <tr>
+		  	<td>
+				&nbsp
+			</td>
+			  <td id="pwd_msg1">
+				  &nbsp
+			  </td>
+		  </tr>
+		  
+		  <tr>
+		  	<td>
+				&nbsp
+			</td>
+			  <td id="pwd_msg2">
+				  &nbsp
+			  </td>
+		  </tr>
+		  
+		  <tr>
+		  	<td>
+				&nbsp
+			</td>
+			  <td id="pwd_msg3">
+				  &nbsp
+			  </td>
+		  </tr>
+		  
+		  <tr>
+		  	<td>
+				&nbsp
+			</td>
+			  <td id="pwd_msg4">
+				  &nbsp
+			  </td>
+		  </tr>
+		  
+		  <tr>
+		  	<td>
+				&nbsp
+			</td>
+			  <td id="pwd_msg5">
+				  &nbsp
+			  </td>
+		  </tr>
+		  
 	  </table><br>
 
 	  <!-- REVIEW button below will reference a JavaScript function in the attached .js file in this repository
