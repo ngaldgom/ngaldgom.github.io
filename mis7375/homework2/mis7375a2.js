@@ -49,3 +49,35 @@ function checkpwd2() {
   message.className = matches ? "password-valid" : "password-invalid";
   return matches;
 }
+
+/* Inputted values in the form will be grabbed when the REVIEW button is clicked, calling the grabdata1() function
+  grabdata1 function will be referenced in the onclick attribute in the <button type="button"> tag
+*/
+
+function grabdata1() {
+  var form = document.getElementById("makeaccount");
+  if (!form) return;
+
+  var rows = [];
+  Array.prototype.forEach.call(form.elements, function (field) {
+    if (!field.name || field.disabled || ["button", "submit", "reset", "password"].indexOf(field.type) !== -1) return;
+    if ((field.type === "checkbox" || field.type === "radio") && !field.checked) return;
+
+    var labelText = "";
+    if (field.id) {
+      var label = form.querySelector('label[for="' + field.id + '"]');
+      if (label) labelText = label.textContent.trim();
+    }
+    if (!labelText && field.type === "radio") {
+      var radioGroup = form.querySelector('input[type="radio"][name="' + field.name + '"]');
+      var groupLabel = radioGroup && radioGroup.closest("td") ? radioGroup.closest("td").previousElementSibling : null;
+      if (groupLabel) labelText = groupLabel.textContent.trim();
+    }
+    if (!labelText) labelText = field.name;
+
+    var value = field.type === "checkbox" ? field.value : field.value.trim();
+    if (value !== "") rows.push({ label: labelText, value: value });
+  });
+
+  displayformdata(rows);
+}
