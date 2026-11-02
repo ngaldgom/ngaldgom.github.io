@@ -81,3 +81,26 @@ function grabdata1() {
 
   displayformdata(rows);
 }
+
+/* displayformdata function will be called in the <p></p> tag after the table
+  The user's input values from the form will be rendered and displayed
+*/
+
+function displayformdata(rows) {
+  var output = document.getElementById("displayformdata");
+  if (!output) return;
+
+  output.replaceChildren();
+  if (rows.length === 0) {
+    output.textContent = "No form values to review.";
+    return;
+  }
+
+  rows.forEach(function (row, index) {
+    var label = document.createElement("strong");
+    label.textContent = row.label + ": ";
+    output.appendChild(label);
+    output.appendChild(document.createTextNode(row.value));
+    if (index < rows.length - 1) output.appendChild(document.createElement("br"));
+  });
+}
