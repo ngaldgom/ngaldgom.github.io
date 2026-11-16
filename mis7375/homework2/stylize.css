@@ -21,3 +21,8 @@ background-color: #FF9E59;
 .footer-appearance{
 background-color: #F0E130;
 }
+
+/* displayformdata will have different background color for <p> tag */
+#displayformdata{
+background-color: #FFEBCD;
+}
