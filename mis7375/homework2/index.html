@@ -2,8 +2,8 @@
 Program name: index.html
 Name: Nathan Galdamez Gomez
 Date created: 10/13/2026
-Date last edited: 10/24/2026 (on my local machine)/ 10/30/2026 (GitHub Pages commit)
-Version: 1.8
+Date last edited: 10/26/2026 (on my local machine)/ 11/16/2026 (GitHub Pages commit)
+Version: 1.9
 Description: This document is the medical form WITH a review button for validated data for Assignment 2.
 -->
 
@@ -145,8 +145,9 @@ Description: This document is the medical form WITH a review button for validate
 		  -->
           <td>
             <label for="state"> State: </label>
-            
-            <select required>
+
+			<!-- Added id and name to <select> tag for JavaScript output in <p> tag after the div containing the form -->
+            <select id="state" name="state" required>
 				
 				<!-- A NULL initial value is below so that the user MUST select a valid value for the state -->
 				<option value="" disabled selected hidden>(Select a State)</option>
